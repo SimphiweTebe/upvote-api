@@ -15,6 +15,10 @@ app.use(cors());
 app.use('/posts', postsRoute)
 app.use('/user', userRoute)
 
+app.get('/', (req,res)=>{
+    res.send('Welcome to Instaverse API')
+})
+
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.CONN_URL, { useNewUrlParser: true, useUnifiedTopology: true })
